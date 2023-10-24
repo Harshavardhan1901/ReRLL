@@ -4,7 +4,15 @@
     <div>
         <asp:Label ID="CategoryLabel" runat="server" Text="Category Name:"></asp:Label>
         <asp:TextBox ID="CategoryNameTextBox" runat="server"></asp:TextBox>
+        
         <asp:Button ID="AddButton" runat="server" Text="Add" OnClick="AddButton_Click" />
+        <br />
+        <asp:RegularExpressionValidator ID="CategoryNameValidator" runat="server"
+    ControlToValidate="CategoryNameTextBox"
+    ValidationExpression="^(?![0-9])[a-zA-Z0-9\s]*$"
+    ErrorMessage="Category Name cannot be a number."
+    Display="Dynamic"
+    ForeColor="Red" />
     </div>
     <asp:Label ID="ErrorMessageLabel" runat="server" Text="" ForeColor="Red"></asp:Label>
 

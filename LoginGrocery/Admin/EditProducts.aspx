@@ -13,6 +13,12 @@
 
         <asp:Label ID="ProductNameLabel" runat="server" Text="Product Name:" AssociatedControlID="ProductNameTextBox"></asp:Label>
         <asp:TextBox ID="ProductNameTextBox" runat="server" CssClass="form-control" />
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+            ControlToValidate="ProductNameTextBox"
+            ValidationExpression="^(?![0-9])[a-zA-Z0-9\s]*$"
+            ErrorMessage="Product Name cannot be a number."
+            Display="Dynamic"
+            CssClass="text-danger" />
         <asp:RequiredFieldValidator ID="ProductNameValidator" runat="server" ControlToValidate="ProductNameTextBox" InitialValue="" Display="Dynamic" CssClass="text-danger" ErrorMessage="Product Name is required." /><br />
         
         

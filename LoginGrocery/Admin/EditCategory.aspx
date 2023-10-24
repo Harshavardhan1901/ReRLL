@@ -5,5 +5,12 @@
     <asp:Label ID="SuccessMessageLabel" runat="server" Text="" ForeColor="Green"></asp:Label>
     
     <asp:TextBox ID="CategoryNameTextBox" runat="server" CssClass="form-control" placeholder="Category Name"></asp:TextBox>
+    <asp:RegularExpressionValidator ID="CategoryNameValidator" runat="server"
+    ControlToValidate="CategoryNameTextBox"
+    ValidationExpression="^(?![0-9])[a-zA-Z0-9\s]*$"
+    ErrorMessage="Category Name cannot be a number."
+    Display="Dynamic"
+    ForeColor="Red" />
+    <br />
     <asp:Button ID="UpdateCategoryButton" runat="server" Text="Update" CssClass="btn btn-primary" OnClick="UpdateCategoryButton_Click" />
 </asp:Content>

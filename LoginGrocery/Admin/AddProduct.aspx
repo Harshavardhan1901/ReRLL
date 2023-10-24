@@ -15,6 +15,12 @@
         <div class="form-group">
             <label for="ProductName">Product Name:</label>
             <asp:TextBox ID="ProductNameTextBox" runat="server" CssClass="form-control" placeholder="Product Name" />
+            <asp:RegularExpressionValidator ID="ProductNameValidator" runat="server"
+                ControlToValidate="ProductNameTextBox"
+                ValidationExpression="^(?![0-9])[a-zA-Z0-9\s]*$"
+                ErrorMessage="Product Name cannot be a number."
+                Display="Dynamic"
+                CssClass="text-danger" />
         </div>
 
         <div class="form-group">
